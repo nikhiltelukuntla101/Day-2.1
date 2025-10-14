@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>😂 Emote Login Portal</title>
+  <style>
+    body {
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      background: linear-gradient(135deg, #ffb6c1, #add8e6);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+      text-align: center;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+      width: 300px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #ff69b4;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #ff1493;
+    }
+
+    .funny-text {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .emoji {
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="emoji">😜</div>
+    <h1>Welcome to Emote!</h1>
+    <p>Login to unlock your daily dose of emotions 💥</p>
+
+    <form onsubmit="return makeLaugh();">
+      <input type="text" id="username" placeholder="Enter your mood (or username)" required><br>
+      <input type="password" id="password" placeholder="Your secret emoji code 🔒" required><br>
+      <button type="submit">😂 Login</button>
+    </form>
+
+    <div class="funny-text" id="funny-message"></div>
+    <p><a href="#">Forgot your emotions?</a></p>
+  </div>
+
+  <script>
+    function makeLaugh() {
+      const username = document.getElementById("username").value;
+      const funnyMessage = document.getElementById("funny-message");
+
+      const jokes = [
+        "Hmm... that password looks suspiciously like '12345' 🤔",
+        "Logging in... hopefully with the right face this time 😅",
+        "Authenticating your vibes... please smile 😁",
+        "Oops! System detected sarcasm in your username 😂",
+        "Hold on... feeding your credentials to a hamster 🐹"
+      ];
+
+      funnyMessage.innerText = jokes[Math.floor(Math.random() * jokes.length)];
+      return false; // Prevent actual submission (for demo)
+    }
+  </script>
+
+</body>
+</html>
